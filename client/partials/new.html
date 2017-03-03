@@ -1,0 +1,32 @@
+<button ng-click="cancel()">Cancel</button>
+<h3>Add New Style:</h3>
+<form>
+    <p>Style Name: <input type="text" ng-model="newStyleTag.name"></p>
+    <p>Description: <input type="text" ng-model="newStyleTag.description"></p>
+    <p><input type="submit" ng-click="createNewStyleTag()"></p>
+</form>
+
+<h3>Add New Studio:</h3>
+<form>
+    <p>Studio Name: <input type="text" ng-model="newStudio.studio_name"></p>
+    <p>Street Address: <input type="text" ng-model="newStudio.street_address"></p>
+    <p>City: <input type="text" ng-model="newStudio.city"></p>
+    <p>State: <input type="text" ng-model="newStudio.state"></p>
+    <p>Zip Code: <input type="text" ng-model="newStudio.zip_code"></p>
+    <p><input type="submit" ng-click="createNewStudio()"></p>
+</form>
+
+<h3>Add New Artist:</h3>
+<form>
+    <p>Artist Name*: <input type="text" ng-model="newArtist.name"></p>
+    <p>Portfolio/Website*: <input type="text" ng-model="newArtist.portfolio"></p>
+    <p>Social Media*: <input type="text" ng-model="newArtist.social_media"></p>
+    <p>Years Experience: <input type="number" ng-model="newArtist.years_experience"></p>
+    <p>Hometown: <input type="text" ng-model="newArtist.home"></p>
+    <p>Phone: <input type="text" ng-model="newArtist.phone"></p>
+    <p>Email: <input type="text" ng-model="newArtist.email"></p>
+    <!-- Languages: <p ng-repeat="language in languages"><input type="checkbox" name="language" value="language" ng-model="language.selected"><label for="language" ng-bind="language"></label></p> -->
+    <p>Studio*: <select ng-model="studio.selected" ng-options="studio as studio.studio_name for studio in studios"></select></p>
+    Styles*: <p ng-repeat="style in styles"><input type="checkbox" name="style._id" value="style" ng-model="style.selected"><label for="style.id" ng-bind="style.name"></label></p>
+    <p><input type="submit" ng-click="createNewArtist()"></p>
+</form>

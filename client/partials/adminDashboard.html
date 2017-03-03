@@ -1,0 +1,60 @@
+<h2>Admin Dashboard</h2>
+
+<a href="#!/new">Add New Styles and Artists</a> | <a href="#!/search">Go to Search</a>
+
+<h4>Current Styles List:</h4>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Artists</th>
+    </tr>
+    <tr ng-repeat="style in styles">
+        <td ng-bind="style.name"></td>
+        <td ng-bind="style.description"></td>
+        <td><p ng-repeat="artist in style._artists">{{artist.name}}</p></td>
+    </tr>
+</table>
+
+<h4>Current Studios List:</h4>
+<table>
+    <tr>
+        <th>Studio Name</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zip Code</th>
+        <th>Artists</th>
+        <th>Actions</th>
+    </tr>
+    <tr ng-repeat="studio in studios">
+        <td ng-bind="studio.studio_name"></td>
+        <td ng-bind="studio.street_address"></td>
+        <td ng-bind="studio.city"></td>
+        <td ng-bind="studio.state"></td>
+        <td ng-bind="studio.zip_code"></td>
+        <td><p ng-repeat="artist in studio._artists">{{artist.name}}</p></td>
+        <td><td><a href="#!/studios/{{studio._id}}">Update Studio</a> | <a href="" ng-click="delete(studio)">Delete</a></td></td>
+
+    </tr>
+</table>
+
+<h4>Current Artist List:</h4>
+<table>
+    <tr>
+        <th>Artist Name</th>
+        <th>Location</th>
+        <th>Portfolio</th>
+        <th>Social Media</th>
+        <th>Styles</th>
+        <th>Actions</th>
+    </tr>
+    <tr ng-repeat="artist in artists">
+        <td><a href="#!/artist/{{artist._id}}">{{artist.name}}</a></td>
+        <td ng-bind="artist.location"></td>
+        <td><a href="{{artist.portfolio}}">Portfolio/Website</a></td>
+        <td><a href="{{artist.social_media}}">Social Media</a></td>
+        <td><p ng-bind="style.name" ng-repeat="style in artist._styles"></p></td>
+        <td><a href="#!/artists/{{artist._id}}">Update Artist</a> | <a href="" ng-click="delete(artist)">Delete</a></td>
+    </tr>
+</table>

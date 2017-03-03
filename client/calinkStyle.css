@@ -1,0 +1,38 @@
+body {
+    padding: 10px;
+    background-color: grey;
+}
+
+.bg-main {
+    margin-top: 20px;
+}
+
+.header {
+    display: inline-block;
+    vertical-align: bottom;
+    margin-bottom: 10px;
+}
+
+.header img {
+    height: 90px;
+    width: 400px;
+    margin-right: 400px;
+}
+
+.searchCarousel {
+    margin-bottom: 20px;
+}
+
+.landingPage {
+    background-image: url('/images/stacked-tat.png');
+    background-size: cover;
+    height: 1200px;
+}
+
+.table {
+    background-color: white;
+}
+
+th {
+    color: orange;
+}

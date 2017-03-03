@@ -1,0 +1,19 @@
+<div class="header">
+    <img src="/images/horiz-black.png" alt="horiz-gold">
+    <button>Login</button> | <button>Sign Up</button>
+</div>
+
+<button ng-click="searchRedirect()">Back to Search</button>
+
+
+<h3>{{studio.studio_name}}</h3>
+<p>{{studio.street_address}}</p>
+<p>{{studio.city}}, {{studio.state}} {{studio.zip_code}}</p>
+<p><a href="{{studio.website}}">{{studio.studio_name}} Website</a></p>
+
+<h5>Artists at {{studio.studio_name}}:</h5>
+<ul>
+    <li ng-repeat="artist in studio._artists"><a href="#!/artist/{{artist._id}}" ng-bind="artist.name"></a><ul>
+        <label for="artistStyles">Styles:</label> <li ng-repeat="style in artist._styles" ng-bind="style.name" name="artistStyles"></li>
+    </ul></li>
+</ul>

@@ -1,0 +1,11 @@
+<h2>Edit: {{artist.name}}</h2>
+
+<form>
+    <p>Artist Name: <input type="text" ng-bind="artist.artist_name" ng-model="artist.name"></p>
+    <p>Location: <input type="text" ng-model="artist.location"></p>
+    <p>Portfolio/Website: <input type="text" ng-model="artist.portfolio"></p>
+    <p>Social Media: <input type="text" ng-model="artist.social_media"></p>
+    Styles: <p ng-repeat="style in styles"><input type="checkbox" name="style.name" value="style.name"><label for="style.name" ng-bind="style.name"></label></p>
+    <p><button ng-click="cancel()">Cancel</button><input type="submit" ng-click="updateArtist(artist)"></p>
+
+</form>
